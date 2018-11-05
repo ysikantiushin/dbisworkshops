@@ -1,0 +1,5 @@
+/* Task 2 */
+
+UPDATE PRODUCT
+SET PRODUCT_NAME = 'menyem'
+WHERE PRODUCT_ID = 1;
