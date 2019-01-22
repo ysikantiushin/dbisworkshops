@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <h1>Додати товар в список побажань</h1>
+    <form action="/add_product_to_wish_list" method="POST">
+        {{ form.hidden_tag() }}
+
+        {% if problem %}
+            {{ problem }}
+        {% endif %}
+
+        {{ form.name(class="form-control") }}
+        {{ form.submit(class="btn") }}
+        <hr>
+        {% for field in form.errors %}
+            {% for error in form.errors[field] %}
+                <div>
+                    <strong>Помилка!</strong> {{ error }}
+                </div>
+            {% endfor %}
+        {% endfor %}
+    </form>
+
+{% endblock %}

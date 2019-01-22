@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {{ table|safe }}
+    <hr>
+    <a href="/product/add" class="btn btn-success">Додати товар</a>
+    <a href="/product/update" class="btn btn-success">Змінити товар</a>
+    <a href="/product/delete" class="btn btn-success">Видалити товар</a>
+{% endblock %}

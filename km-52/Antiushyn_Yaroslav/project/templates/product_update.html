@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>Змінити товар</h1>
+    <form action="/product/update" method="POST">
+        {{ form.hidden_tag() }}
+
+        {% if problem %}
+            {{ problem }}
+        {% endif %}
+
+        {{ form.name(class="form-control") }}
+        {{ form.count(class="form-control", placeholder=form.count.label.text) }}
+        <hr>
+        {{ form.submit(class="btn") }}
+
+        {% for field in form.errors %}
+            {% for error in form.errors[field] %}
+                <div>
+                    <strong>Помилка!</strong> {{ error }}
+                </div>
+            {% endfor %}
+        {% endfor %}
+    </form>
+
+{% endblock %}

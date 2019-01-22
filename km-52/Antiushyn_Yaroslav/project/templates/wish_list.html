@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {{ table|safe }}
+    <hr>
+    <a href="/add_product_to_wish_list">Додати товар до списку бажань</a>
+    <hr>
+    <a href="/delete_product_from_wish_list">Видалити товар з списку бажань</a>
+{% endblock %}
